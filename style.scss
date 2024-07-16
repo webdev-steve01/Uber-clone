@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // border: 1px solid red;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -18,22 +17,20 @@ a {
   border-bottom: 1px solid grey;
   text-decoration: none;
   padding: 0;
-  transition: all ease 500ms;
-  // width: 100%;
-  // border: 1px solid red;
+  transition: all ease 500ms;;
 }
 a:hover {
   color: rgb(22, 22, 21);
   border-bottom: 1px solid black;
-  // text-decoration: none;
 }
 
 input[list].highlight::-webkit-calender-picker-indicator {
   display: none;
 }
 
+
+
 .nav-bar {
-  // position: fixed;
   background-color: rgb(22, 22, 21);
   color: #ffffff;
   display: flex;
@@ -44,9 +41,7 @@ input[list].highlight::-webkit-calender-picker-indicator {
       display: flex;
       justify-content: space-between;
       gap: 1em;
-      // border: 1px solid red;
       .hover {
-        // border: 1px solid red;
         padding: 0.2em 0.5em;
         cursor: pointer;
         border-radius: 50px;
@@ -61,15 +56,22 @@ input[list].highlight::-webkit-calender-picker-indicator {
     list-style-type: none;
     .DriveMe {
       cursor: pointer;
-
+      z-index: 2;
       font-family: "Playwrite HR", cursive;
       font-optical-sizing: auto;
       font-weight: 300;
       font-style: normal;
       .dropdown {
         list-style-type: none;
-        position: absolute;
+        position: relative;
+        visibility: visible;
+        z-index: 10;
         display: none;
+        left: 0;
+        height: 100vh;
+        .download-child{
+          background-color: red;
+        }
       }
     }
     .DriveMe:hover {
@@ -80,6 +82,11 @@ input[list].highlight::-webkit-calender-picker-indicator {
         background-color: rgb(22, 22, 21);
         color: white;
         margin: 1em 0;
+        .dropdown-child{
+          &:hover{
+            color: #d6d3d3;
+          }
+        }
       }
     }
   }
@@ -93,7 +100,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
   .form-container {
     padding: 0 1em;
     .text {
-      // border: 1px solid red;
       padding: 1em 0;
       max-width: 300px;
     }
@@ -101,21 +107,10 @@ input[list].highlight::-webkit-calender-picker-indicator {
       display: flex;
       flex-direction: column;
       gap: 0.7em;
-      // padding: 0 1em;
       .extra-style {
         display: flex;
         flex-direction: column;
         gap: 0.7em;
-        // border: 1px solid red;
-        &::before {
-          content: "";
-          // position: absolute;
-          // border: 1px solid green;
-          // height: 20px;
-          // width: 2px;
-          // top: 100px;
-          // bottom: 0;
-        }
       }
     }
     .first-part--header {
@@ -150,7 +145,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
     width: 100%;
     margin: auto;
     padding: 1em 1em;
-    // max-width: 500px;
   }
   .btn {
     width: 150px;
@@ -182,7 +176,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
     .text {
       line-height: 1.5em;
       padding: 1em 0;
-      // max-width: 400px;
     }
     .get-started {
       font-size: 1.1em;
@@ -207,7 +200,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
   .image {
     padding: 0 1em;
     width: 100%;
-    // max-width: 500px;
   }
 }
 
@@ -219,7 +211,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      // align-items: center;
     }
     .second-part--header {
       font-size: 2.3em;
@@ -244,10 +235,8 @@ input[list].highlight::-webkit-calender-picker-indicator {
     }
     .underlined {
       display: inline-block;
-      // text-align: center;
       position: relative;
       max-width: 250px;
-      // text-decoration: underline;
       cursor: pointer;
     }
   }
@@ -255,7 +244,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
     width: 100%;
     padding: 0 1em;
     margin: 0 auto;
-    // max-width: 500px;
     img {
       width: 100%;
     }
@@ -264,7 +252,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
 
 .download {
   padding: 0.5em 1em;
-  // border: 1px solid black;
   background-color: rgb(240, 240, 234);
   .flexed {
     display: flex;
@@ -279,7 +266,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // border: .3px solid black;
     padding: 0.8em 0.5em;
     background-color: white;
     max-width: 700px;
@@ -317,13 +303,11 @@ input[list].highlight::-webkit-calender-picker-indicator {
     .DriveMe,
     .help {
       padding: 2em 1em;
-      // border: 1px solid red;
     }
   }
   .last-part--flexed {
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: column;
     .child {
       padding: 1em;
       min-width: 300px;
@@ -338,25 +322,19 @@ input[list].highlight::-webkit-calender-picker-indicator {
     }
   }
   .socials {
-    // border: 1px solid red;
     padding: 1em;
     display: flex;
     width: 75%;
     max-width: 500px;
     justify-content: space-between;
-    // gap: 1em;
     .image {
-      // border: 1px solid red;
       max-width: 20px;
     }
   }
 
   .extra {
-    // display: flex;
-    // flex-direction: column;
     gap: 0.5em;
     .eng {
-      // border: 1px solid red;
       display: flex;
       gap: 5px;
       padding: 0 1em;
@@ -365,7 +343,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
       }
     }
     .lag {
-      // border: 1px solid red;
       display: flex;
       gap: 5px;
       padding: 0 1em;
@@ -394,14 +371,9 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
 
   .finishing {
-    // border: 1px solid red;
     padding: 2em 1em;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 3em;
     font-weight: 100;
     .finished {
-      // border: 1px solid green;
       display: flex;
       padding: 1em 0;
       gap: 1em;
@@ -412,7 +384,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
 @media screen and (min-width: 950px) {
   .download {
     .flexed {
-      // border: 1px solid green;
       flex-direction: row;
       padding: 2em 0;
       .download-child {
@@ -442,22 +413,18 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
 
   .second-part {
-    // border: 1px solid red;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     padding: 1em 0;
     .image {
-      // width: 50%;
       max-width: 600px;
     }
     .second-part--header {
       max-width: 300px;
-      // border: 1px solid red;
     }
     .text {
       max-width: 400px;
-      // border: 1px solid red;
     }
     .text-container {
       .flex {
@@ -479,9 +446,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
   .extra {
     display: flex;
     flex-direction: row;
-
-    // gap: 400px;
-    // border: 1px solid red ;
   }
   .changed {
     display: flex;
@@ -490,16 +454,13 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
 
   .finishing {
-    // border: 1px solid red;
     padding: 5em 0;
-    // margin-bottom: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     .DriveMe {
       display: flex;
       align-items: center;
-      // border: 1px solid red;
     }
     .finished {
       padding: 0 0;

@@ -55,6 +55,7 @@ input[list].highlight::-webkit-calender-picker-indicator {
 }
 .nav-bar .nav-bar--list .DriveMe {
   cursor: pointer;
+  z-index: 2;
   font-family: "Playwrite HR", cursive;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -62,8 +63,14 @@ input[list].highlight::-webkit-calender-picker-indicator {
 }
 .nav-bar .nav-bar--list .DriveMe .dropdown {
   list-style-type: none;
-  position: absolute;
+  position: relative;
+  visibility: visible;
+  z-index: 10;
   display: none;
+  left: 0;
+}
+.nav-bar .nav-bar--list .DriveMe .dropdown .download-child {
+  background-color: red;
 }
 .nav-bar .nav-bar--list .DriveMe:hover .dropdown {
   display: flex;
@@ -72,6 +79,9 @@ input[list].highlight::-webkit-calender-picker-indicator {
   background-color: rgb(22, 22, 21);
   color: white;
   margin: 1em 0;
+}
+.nav-bar .nav-bar--list .DriveMe:hover .dropdown .dropdown-child:hover {
+  color: #d6d3d3;
 }
 
 .first-part {
@@ -96,9 +106,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
-}
-.first-part .form-container .gap .extra-style::before {
-  content: "";
 }
 .first-part .form-container .first-part--header {
   padding: 0.5em 0;
