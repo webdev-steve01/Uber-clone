@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   // border: 1px solid red;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 img {
   width: 100%;
@@ -11,13 +14,21 @@ img {
 
 a {
   color: rgb(22, 22, 21);
+  border-bottom: 1px solid grey;
   text-decoration: none;
+  padding: 0;
+  transition: all ease 500ms;
   // width: 100%;
   // border: 1px solid red;
 }
 a:hover {
   color: rgb(22, 22, 21);
-  text-decoration: none;
+  border-bottom: 1px solid black;
+  // text-decoration: none;
+}
+
+input[list].highlight::-webkit-calender-picker-indicator {
+  display: none;
 }
 
 .nav-bar {
@@ -47,15 +58,20 @@ a:hover {
   }
   .nav-bar--list {
     list-style-type: none;
-    .uber {
+    .DriveMe {
       cursor: pointer;
+
+      font-family: "Playwrite HR", cursive;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
       .dropdown {
         list-style-type: none;
         position: absolute;
         display: none;
       }
     }
-    .uber:hover {
+    .DriveMe:hover {
       .dropdown {
         display: flex;
         flex-direction: column;
@@ -84,6 +100,22 @@ a:hover {
       display: flex;
       flex-direction: column;
       gap: 0.7em;
+      // padding: 0 1em;
+      .extra-style {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7em;
+        // border: 1px solid red;
+        &::before {
+          content: "";
+          // position: absolute;
+          // border: 1px solid green;
+          // height: 20px;
+          // width: 2px;
+          // top: 100px;
+          // bottom: 0;
+        }
+      }
     }
     .first-part--header {
       padding: 0.5em 0;
@@ -109,7 +141,7 @@ a:hover {
         max-width: 300px;
       }
       input:focus {
-        border: none;
+        outline: none;
       }
     }
   }
@@ -135,8 +167,6 @@ a:hover {
     padding: 0 1em;
     .flex {
       display: flex;
-      // justify-content: flex-start;
-      // align-items: center;
       flex-direction: column;
     }
     .second-part--header {
@@ -164,24 +194,9 @@ a:hover {
     }
     .underlined {
       display: inline-block;
-      // text-align: center;
       position: relative;
       max-width: 250px;
-      // border: 1px solid black;
-      // text-decoration: underline;
       cursor: pointer;
-      // width: 100%;
-      &::before {
-        content: "";
-        position: absolute;
-        height: 0px;
-        // top: 0;
-        margin: 0;
-        bottom: 18px;
-        width: 95%;
-        max-width: 250px;
-        border: 1px solid grey;
-      }
     }
   }
   .image {
@@ -229,18 +244,6 @@ a:hover {
       max-width: 250px;
       // text-decoration: underline;
       cursor: pointer;
-      &::before {
-        content: "";
-        position: absolute;
-        height: 0px;
-        // top: 0;
-        margin: 0;
-        bottom: 18px;
-        width: 65%;
-        // max-width: 250px;
-        border: 1px solid grey;
-        transition: all ease 700ms;
-      }
     }
   }
   .image {
@@ -306,7 +309,7 @@ a:hover {
   flex-direction: column;
   background-color: rgb(0, 0, 0);
   .last-part--header {
-    .uber,
+    .DriveMe,
     .help {
       padding: 2em 1em;
       // border: 1px solid red;
@@ -488,7 +491,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    .uber {
+    .DriveMe {
       display: flex;
       align-items: center;
       // border: 1px solid red;

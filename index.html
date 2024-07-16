@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/style.css">
-  <title>Uber</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>DriveMe</title>
   <script defer src="./anime-master/lib/anime.min.js"></script>
   <script defer src="app.js"></script>
 </head>
@@ -12,12 +18,12 @@
   <nav class="nav-bar">
     <section class="left">
       <ul class="nav-bar--list" id="main">
-        <li class="uber">
-          Uber
+        <li class="DriveMe">
+          DriveMe
           <ul class="dropdown">
             <li class="">Ride</li>
             <li class="">Drive</li>
-            <li class="">Uber Eats</li>
+            <li class="">DriveMe Eats</li>
             <li class="">About us</li>
           </ul>
         </li>
@@ -44,36 +50,40 @@
   <section class="first-part">
     <section class="form-container">
       <h1 class="first-part--header">
-        Go anywhere with Uber
+        Go anywhere with DriveMe
       </h1>
       <p class="text">
         Request a ride, hop in, and go.
       </p>
 
       <div class="gap">
-        <section class="form">
-          <section class="svg">
-            <img src="location-pin-alt-1-svgrepo-com.svg" alt="location">
+        <section class="extra-style">
+          <section class="form">
+            <section class="svg">
+              <img src="location-pin-alt-1-svgrepo-com.svg" alt="location">
+            </section>
+            <input type="text" placeholder="Enter Location" name="Location" list="state" class="highlight" class="highlight">
+            <datalist id="state"></datalist>
+            <section class="svg">
+              <img src="cancel-svgrepo-com.svg" alt="location">
+            </section>
           </section>
-          <input type="text" placeholder="Enter Location" name="Location" class="highlight" class="highlight">
-          <section class="svg">
-            <img src="cancel-svgrepo-com.svg" alt="location">
-          </section>
-        </section>
-        <section class="form">
-          <section class="svg">
-            <img src="destination-3-svgrepo-com.svg" alt="location">
-          </section>
-          <input type="text" placeholder="Enter Destination" class="highlight" name="Destination" id="">
-          <section class="svg">
-            <img src="cancel-svgrepo-com.svg" alt="location">
+          <section class="form">
+            <section class="svg">
+              <img src="destination-3-svgrepo-com.svg" alt="location">
+            </section>
+            <input type="text" placeholder="Enter Destination" class="highlight" name="Destination" list="state">
+            <datalist id="state"></datalist>
+            <section class="svg">
+              <img src="cancel-svgrepo-com.svg" alt="location">
+            </section>
           </section>
         </section>
         <button class="btn">See Prices</button>
       </div>
     </section>
     <section class="image">
-      <img src="Ride-with-Uber.webp" alt="Ride-with-Uber">
+      <img src="Ride-with-Uber.webp" alt="Ride-with-DriveMe">
     </section>
   </section>
   <section class="second-part">
@@ -82,7 +92,7 @@
         Drive when you want, make what you need
       </h1>
       <p class="text">
-        Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through Uber.
+        Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through DriveMe.
       </p>
       <div class="flex">
         <button class="get-started">
@@ -100,10 +110,10 @@
   <section class="third-part">
     <section class="text-container">
       <h1 class="second-part--header">
-        The Uber you know, reimagined for business
+        The DriveMe you know, reimagined for business
       </h1>
       <p class="text">
-        Uber for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.
+        DriveMe for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.
       </p>
       <div class="flex">
         <button class="get-started">
@@ -125,10 +135,10 @@
     <div class="flexed">
       <section class="download-child">
         <section class="image">
-          <img src="uberDownload.svg" alt="uber">
+          <img src="uberDownload.svg" alt="DriveMe">
         </section>
         <p class="text">
-          Download the uber app
+          Download the DriveMe app
         </p>
         <section class="svg">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="arrow">
@@ -136,7 +146,7 @@
       </section>
         <section class="download-child">
       <section class="image">
-        <img src="uberDownload2.svg" alt="uber">
+        <img src="uberDownload.svg" alt="DriveMe">
       </section>
       <p class="text">
         Download the driver app
@@ -148,8 +158,8 @@
   </section>
   <section class="last-part">
     <section class="last-part--header">
-      <p class="uber">
-        Uber
+      <p class="DriveMe">
+        DriveMe
       </p>
       <p class="help">
         visit help center
@@ -172,7 +182,7 @@
         <p class="text">Ride</p>
         <p class="text">Drive</p>
         <p class="text">Eat</p>
-        <p class="text">Uber Freight</p>
+        <p class="text">DriveMe Freight</p>
       </nav>
       <nav class="child">
         <p class="head">
@@ -256,8 +266,8 @@
     </section>
 
     <article class="finishing">
-      <section class="uber">
-        <p>&copy; uber Technologies inc.</p>
+      <section class="DriveMe">
+        <p>&copy; DriveMe Technologies inc.</p>
       </section>
       <section class="finished">
         <p class="text">Privacy</p>
