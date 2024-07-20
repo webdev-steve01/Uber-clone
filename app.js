@@ -101,3 +101,17 @@ darkMode.addEventListener("click", () => {
     toggle = true;
   }
 });
+
+const cancel = document.getElementById("cancel");
+const input = document.getElementById("input");
+
+cancel.addEventListener("click", () => {
+  input.value = null;
+});
+
+const cancelTwo = document.getElementById("cancel-two");
+const inputTwo = document.getElementById("input-two");
+
+cancelTwo.addEventListener("click", () => {
+  inputTwo.value = null;
+});
