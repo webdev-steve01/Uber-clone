@@ -30,7 +30,9 @@ input[list].highlight::-webkit-calender-picker-indicator {
 }
 
 .nav-bar {
-  background-color: rgb(22, 22, 21);
+  position: sticky;
+  top: 0;
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -365,6 +367,48 @@ input[list].highlight::-webkit-calender-picker-indicator {
   gap: 1em;
 }
 
+#login-options {
+  display: none;
+  animation: slideIn 300ms ease;
+}
+#login-options .content {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  font-size: 1.5em;
+  padding: 0 1em;
+}
+#login-options .content .ride {
+  border-bottom: 1px solid black;
+  padding: 3em 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+#login-options .content .ride:hover .image {
+  transform: translateX(10px);
+}
+#login-options .content .ride .text a {
+  text-decoration: none;
+  border-bottom: none;
+}
+#login-options .content .ride .text a:link {
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+}
+#login-options .content .ride .text a:hover {
+  text-decoration: none;
+}
+#login-options .content .ride .image {
+  width: 40px;
+  transition: all ease 700ms;
+}
+
 @media screen and (min-width: 950px) {
   .download .flexed {
     flex-direction: row;
@@ -376,6 +420,142 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
   .download .flexed .download-child .text {
     font-size: 1.5em;
+  }
+}
+.login-navigation {
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  color: white;
+  background-color: rgb(22, 22, 21);
+}
+.login-navigation .driveMe {
+  font-family: "Playwrite HR", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.container .content .form-container-two {
+  padding: 1em;
+}
+.container .content .form-container-two #signUpMessage {
+  border: 1px solid black;
+  background-color: lightgreen;
+  padding: 1em 0.5em;
+  text-align: center;
+  border-radius: 10px;
+  animation: moveIn ease 700ms;
+  transform: translateY(-10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  display: none;
+}
+.container .content .form-container-two #signUpMessage .image {
+  width: 20px;
+}
+.container .content .form-container-two .form-header {
+  border: 1px solid black;
+  padding: 0.8em;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: "Playwrite HR", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.container .content #form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.container .content #form #Email, .container .content #form #pword {
+  padding: 0.5em 1em;
+}
+.container .content #form .submit {
+  padding: 1em 0;
+}
+.container .content #form .submit #submit {
+  padding: 1em 0;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+.container .or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  padding: 0.5em 0;
+}
+.container .or .line {
+  width: 40%;
+  border: 1px solid grey;
+}
+.container .account {
+  width: 95%;
+  margin: auto;
+}
+.container .account .google {
+  padding: 0.5em 0;
+  border-radius: 10px;
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(203, 202, 202);
+}
+.container .account .google .image {
+  width: 7%;
+  max-width: 30px;
+}
+.container .footer {
+  font-weight: 400;
+  text-align: center;
+  font-size: 0.7em;
+  padding: 2em 1em;
+}
+
+@keyframes moveIn {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 400px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
   }
 }
 @media screen and (min-width: 1136px) {

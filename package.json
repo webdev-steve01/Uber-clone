@@ -1,0 +1,20 @@
+{
+  "name": "uber-clone",
+  "version": "1.0.0",
+  "description": "My intention was to make this website look like uber as much as i can, but i was met with a few setbacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "firebase": "^10.12.4"
+  }
+}

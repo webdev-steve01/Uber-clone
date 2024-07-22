@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>DriveMe</title>
   <script defer src="./anime-master/lib/anime.min.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="./components/src/app.js"></script>
 </head>
 <body >
   <nav class="nav-bar">
@@ -32,8 +32,8 @@
     <section class="right">
       <ul class="nav-bar--list">
         <li></li>
-        <li class="hover hover-highlight">Log in</li>
-        <li class="hover hover-highlight"><span>sign up</span></li>
+        <li class="hover hover-highlight" id="logIn">Log in</li>
+        <li class="hover hover-highlight" id="signUp"><span>sign up</span></li>
         <li class="hover" >
           <div  >
             <svg id="darkMode"  xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -47,234 +47,269 @@
       </ul>
     </section>
   </nav>
-  <section class="first-part">
-    <section class="form-container">
-      <h1 class="first-part--header">
-        Go anywhere with DriveMe
-      </h1>
-      <p class="text">
-        Request a ride, hop in, and go.
-      </p>
-
-      <div class="gap">
-        <section class="extra-style">
-          <section class="form">
-            <section class="svg">
-              <img src="location-pin-alt-1-svgrepo-com.svg" alt="location">
+  <section id="login-options">
+    <div class="content">
+      <div class="ride">
+        <p class="text" id="login-drive">
+          <a href="./components/logIn.html">Sign in to drive and deliver</a>
+        </p>
+        <div class="image">
+          <img src="arrow-sm-right-svgrepo-com.svg" alt="">
+        </div>
+      </div>
+      <div class="ride">
+        <p class="text" id="login-ride">
+          <a href="./components/logIn.html">Sign in to ride</a>
+        </p>
+        <div class="image">
+          <img src="arrow-sm-right-svgrepo-com.svg" alt="">
+        </div>
+      </div>
+      <div class="ride">
+        <p class="text" id="login-delivery">
+          <a href="./components/logIn.html">Sign in to order delivery with uber eats</a>
+        </p>
+        <div class="image">
+          <img src="arrow-sm-right-svgrepo-com.svg" alt="">
+        </div>
+      </div>
+      <div class="ride">
+        <p class="text" id="login-business">
+          <a href="./components/logIn.html">Sign in to your uber for business</a>
+        </p>
+        <div class="image">
+          <img src="arrow-sm-right-svgrepo-com.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="body">
+    <section class="first-part">
+      <section class="form-container">
+        <h1 class="first-part--header">
+          Go anywhere with DriveMe
+        </h1>
+        <p class="text">
+          Request a ride, hop in, and go.
+        </p>
+        <div class="gap">
+          <section class="extra-style">
+            <section class="form">
+              <section class="svg">
+                <img src="location-pin-alt-1-svgrepo-com.svg" alt="location">
+              </section>
+              <input type="text" id="input" placeholder="Enter Location" name="Location" list="state" class="highlight" class="highlight">
+              <datalist id="state"></datalist>
+              <section class="svg">
+                <img src="cancel-svgrepo-com.svg" id="cancel" alt="location">
+              </section>
             </section>
-            <input type="text" id="input" placeholder="Enter Location" name="Location" list="state" class="highlight" class="highlight">
-            <datalist id="state"></datalist>
-            <section class="svg">
-              <img src="cancel-svgrepo-com.svg" id="cancel" alt="location">
+            <section class="form">
+              <section class="svg">
+                <img src="destination-3-svgrepo-com.svg" alt="location">
+              </section>
+              <input type="text" placeholder="Enter Destination" id="input-two" class="highlight" name="Destination" list="state">
+              <datalist id="state"></datalist>
+              <section class="svg">
+                <img src="cancel-svgrepo-com.svg" id="cancel-two" alt="location">
+              </section>
             </section>
           </section>
-          <section class="form">
-            <section class="svg">
-              <img src="destination-3-svgrepo-com.svg" alt="location">
-            </section>
-            <input type="text" placeholder="Enter Destination" id="input-two" class="highlight" name="Destination" list="state">
-            <datalist id="state"></datalist>
-            <section class="svg">
-              <img src="cancel-svgrepo-com.svg" id="cancel-two" alt="location">
-            </section>
+          <button class="btn">See Prices</button>
+        </div>
+      </section>
+      <section class="image">
+        <img src="Ride-with-Uber.webp" alt="Ride-with-DriveMe">
+      </section>
+    </section>
+    <section class="second-part">
+      <section class="text-container">
+        <h1 class="second-part--header">
+          Drive when you want, make what you need
+        </h1>
+        <p class="text">
+          Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through DriveMe.
+        </p>
+        <div class="flex">
+          <button class="get-started">
+            Get started
+          </button>
+          <p class="text underlined">
+            <a href="#">Already have an account? Sign in</a>
+          </p>
+        </div>
+      </section>
+      <section class="image">
+        <img src="earner-illustra.webp" alt="earner-illustra">
+      </section>
+    </section>
+    <section class="third-part">
+      <section class="text-container">
+        <h1 class="second-part--header">
+          The DriveMe you know, reimagined for business
+        </h1>
+        <p class="text">
+          DriveMe for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.
+        </p>
+        <div class="flex">
+          <button class="get-started">
+            Get started
+          </button>
+          <p class="text underlined">
+            <a href="#">Check out our solutions</a>
+          </p>
+        </div>
+      </section>
+      <section class="image">
+        <img src="u4b-square.webp" alt="u4b-square">
+      </section>
+    </section>
+    <section class="download">
+      <h1 class="download-header">
+        It's easier in the apps
+      </h1>
+      <div class="flexed">
+        <section class="download-child">
+          <section class="image">
+            <img src="uberDownload.svg" alt="DriveMe">
+          </section>
+          <p class="text">
+            Download the DriveMe app
+          </p>
+          <section class="svg">
+            <img src="arrow-sm-right-svgrepo-com.svg" alt="arrow">
           </section>
         </section>
-        <button class="btn">See Prices</button>
-      </div>
-    </section>
-    <section class="image">
-      <img src="Ride-with-Uber.webp" alt="Ride-with-DriveMe">
-    </section>
-  </section>
-  <section class="second-part">
-    <section class="text-container">
-      <h1 class="second-part--header">
-        Drive when you want, make what you need
-      </h1>
-      <p class="text">
-        Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through DriveMe.
-      </p>
-      <div class="flex">
-        <button class="get-started">
-          Get started
-        </button>
-        <p class="text underlined">
-          <a href="#">Already have an account? Sign in</a>
-        </p>
-      </div>
-    </section>
-    <section class="image">
-      <img src="earner-illustra.webp" alt="earner-illustra">
-    </section>
-  </section>
-  <section class="third-part">
-    <section class="text-container">
-      <h1 class="second-part--header">
-        The DriveMe you know, reimagined for business
-      </h1>
-      <p class="text">
-        DriveMe for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.
-      </p>
-      <div class="flex">
-        <button class="get-started">
-          Get started
-        </button>
-        <p class="text underlined">
-          <a href="#">Check out our solutions</a>
-        </p>
-      </div>
-    </section>
-    <section class="image">
-      <img src="u4b-square.webp" alt="u4b-square">
-    </section>
-  </section>
-  <section class="download">
-    <h1 class="download-header">
-      It's easier in the apps
-    </h1>
-    <div class="flexed">
-      <section class="download-child">
+          <section class="download-child">
         <section class="image">
           <img src="uberDownload.svg" alt="DriveMe">
         </section>
         <p class="text">
-          Download the DriveMe app
+          Download the driver app
         </p>
         <section class="svg">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="arrow">
         </section>
-      </section>
-        <section class="download-child">
-      <section class="image">
-        <img src="uberDownload.svg" alt="DriveMe">
-      </section>
-      <p class="text">
-        Download the driver app
-      </p>
-      <section class="svg">
-        <img src="arrow-sm-right-svgrepo-com.svg" alt="arrow">
-      </section>
-    </div>
-  </section>
-  <section class="last-part">
-    <section class="last-part--header">
-      <p class="DriveMe">
-        DriveMe
-      </p>
-      <p class="help">
-        visit help center
-      </p>
+      </div>
     </section>
-    <section class="last-part--flexed">
-      <nav class="child">
-        <p class="head">company</p>
-        <p class="text">About us</p>
-        <p class="text">Our offerings</p>
-        <p class="text">Newsroom</p>
-        <p class="text">investors</p>
-        <p class="text">Blog</p>
-        <p class="text">Careers</p>
-        <p class="text">Ai</p>
-        <p class="text">Gift cards</p>
-      </nav>
-      <nav class="child">
-        <p class="head">products</p>
-        <p class="text">Ride</p>
-        <p class="text">Drive</p>
-        <p class="text">Eat</p>
-        <p class="text">DriveMe Freight</p>
-      </nav>
-      <nav class="child">
-        <p class="head">
-          global citizenship
+    <section class="last-part">
+      <section class="last-part--header">
+        <p class="DriveMe">
+          DriveMe
         </p>
-        <p class="text">Safety</p>
-        <p class="text">Diversity in inclusion</p>
-        <p class="text">Sustainability</p>
-      </nav>
-      <nav class="child">
-        <p class="head">Travel</p>
-        <p class="text">Reserve</p>
-        <p class="text">Airports</p>
-        <p class="text">Cities</p>
-      </nav>
-    </section>
-    <div class="changed">
-      <section class="socials">
-        <section class="image">
-          <img src="facebook-svgrepo-com.svg" alt="facebook-svgrepo-com">
-        </section>
-        <section class="image">
-          <img src="twitter-svgrepo-com.svg" alt="twitter-svgrepo-com">
-        </section>
-        <section class="image">
-          <img src="youtube-svgrepo-com.svg" alt="youtube-svgrepo-com">
-        </section>
-        <section class="image">
-          <img src="linkedin-svgrepo-com.svg" alt="linkedin-svgrepo-com">
-        </section>
-        <section class="image">
-          <img src="instagram-svgrepo-com.svg" alt="instagram-svgrepo-com">
-        </section>
+        <p class="help">
+          visit help center
+        </p>
       </section>
-      <section class="extra">
-        <section class="eng">
+      <section class="last-part--flexed">
+        <nav class="child">
+          <p class="head">company</p>
+          <p class="text">About us</p>
+          <p class="text">Our offerings</p>
+          <p class="text">Newsroom</p>
+          <p class="text">investors</p>
+          <p class="text">Blog</p>
+          <p class="text">Careers</p>
+          <p class="text">Ai</p>
+          <p class="text">Gift cards</p>
+        </nav>
+        <nav class="child">
+          <p class="head">products</p>
+          <p class="text">Ride</p>
+          <p class="text">Drive</p>
+          <p class="text">Eat</p>
+          <p class="text">DriveMe Freight</p>
+        </nav>
+        <nav class="child">
+          <p class="head">
+            global citizenship
+          </p>
+          <p class="text">Safety</p>
+          <p class="text">Diversity in inclusion</p>
+          <p class="text">Sustainability</p>
+        </nav>
+        <nav class="child">
+          <p class="head">Travel</p>
+          <p class="text">Reserve</p>
+          <p class="text">Airports</p>
+          <p class="text">Cities</p>
+        </nav>
+      </section>
+      <div class="changed">
+        <section class="socials">
           <section class="image">
-            <img src="globe-1-svgrepo-com.svg" alt="globe">
+            <img src="facebook-svgrepo-com.svg" alt="facebook-svgrepo-com">
           </section>
-          <p class="text">
-            English
-          </p>
-        </section>
-        <section class="lag">
           <section class="image">
-            <img src="location-check-svgrepo-com.svg" alt="">
+            <img src="twitter-svgrepo-com.svg" alt="twitter-svgrepo-com">
           </section>
-          <p class="text" id="position">
-          </p>
+          <section class="image">
+            <img src="youtube-svgrepo-com.svg" alt="youtube-svgrepo-com">
+          </section>
+          <section class="image">
+            <img src="linkedin-svgrepo-com.svg" alt="linkedin-svgrepo-com">
+          </section>
+          <section class="image">
+            <img src="instagram-svgrepo-com.svg" alt="instagram-svgrepo-com">
+          </section>
         </section>
+        <section class="extra">
+          <section class="eng">
+            <section class="image">
+              <img src="globe-1-svgrepo-com.svg" alt="globe">
+            </section>
+            <p class="text">
+              English
+            </p>
+          </section>
+          <section class="lag">
+            <section class="image">
+              <img src="location-check-svgrepo-com.svg" alt="">
+            </section>
+            <p class="text" id="position">
+            </p>
+          </section>
+        </section>
+      </div>
+      <section class="PlayStore">
+        <div class="store">
+          <div class="image">
+            <img src="google-play-style-svgrepo-com.svg" alt="">
+          </div>
+          <div class="article">
+            <p class="text">
+              get it on
+            </p>
+            <h1 class="head">
+              Google Play
+            </h1>
+          </div>
+        </div>
+        <div class="store">
+          <div class="image">
+            <img src="apple-inc-svgrepo-com.svg" alt="">
+          </div>
+          <div class="article">
+            <p class="text">
+              download on the
+            </p>
+            <h1 class="head">
+              App Store
+            </h1>
+          </div>
+        </div>
       </section>
-    </div>
-
-    <section class="PlayStore">
-      <div class="store">
-        <div class="image">
-          <img src="google-play-style-svgrepo-com.svg" alt="">
-        </div>
-        <div class="article">
-          <p class="text">
-            get it on
-          </p>
-          <h1 class="head">
-            Google Play
-          </h1>
-        </div>
-      </div>
-      <div class="store">
-        <div class="image">
-          <img src="apple-inc-svgrepo-com.svg" alt="">
-        </div>
-        <div class="article">
-          <p class="text">
-            download on the
-          </p>
-          <h1 class="head">
-            App Store
-          </h1>
-        </div>
-      </div>
+      <article class="finishing">
+        <section class="DriveMe">
+          <p>&copy; DriveMe Technologies inc.</p>
+        </section>
+        <section class="finished">
+          <p class="text">Privacy</p>
+          <p class="text">Accessibility</p>
+          <p class="text">Terms</p>
+        </section>
+      </article>
     </section>
-
-    <article class="finishing">
-      <section class="DriveMe">
-        <p>&copy; DriveMe Technologies inc.</p>
-      </section>
-      <section class="finished">
-        <p class="text">Privacy</p>
-        <p class="text">Accessibility</p>
-        <p class="text">Terms</p>
-      </section>
-    </article>
-  </section>
+  </div>
 </body>
 </html>
