@@ -30,12 +30,20 @@ submit.addEventListener("submit", (e) => {
       user.email = email;
       user.password = password;
       console.log(user);
-      message.style.display = "block";
+<<<<<<< HEAD
+=======
+      message.style.display = "flex"
+      message.style.display = "flex";
+>>>>>>> 3f89da8275cdf2f0c3259ac21cc4d36f42cc0e19
       message.style.alignItems = 'center'
       message.style.justifyContent = 'space-around'
     })
     .catch((err) => {
       console.log(err.message);
+<<<<<<< HEAD
+=======
+      message.style.display = 'block'
+>>>>>>> 3f89da8275cdf2f0c3259ac21cc4d36f42cc0e19
     });
 });
 
