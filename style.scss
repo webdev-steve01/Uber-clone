@@ -1,4 +1,5 @@
 * {
+  // border: 1px solid red;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,7 +32,9 @@ input[list].highlight::-webkit-calender-picker-indicator {
 
 
 .nav-bar {
-  background-color: rgb(22, 22, 21);
+  position: sticky;
+  top: 0;
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -380,6 +383,52 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
 }
 
+#login-options{
+  display: none;
+  animation: slideIn 300ms ease;
+  .content{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    // border: 1px solid black;
+    min-height: 100vh;
+    font-size: 1.5em;
+    padding: 0 1em;
+    .ride{
+      border-bottom: 1px solid black;
+      padding: 3em 0;
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+      gap: .5em;
+      width: 90%;
+      max-width: 500px;
+      margin: auto;
+      &:hover .image{
+        transform: translateX(10px);
+      }
+      .text{
+        a{
+          text-decoration: none;
+          border-bottom: none;
+        }
+        a:link{
+          font-weight: 900;
+          text-decoration: none;
+          color: black;
+        }
+        a:hover{
+          text-decoration: none;
+        }
+        
+      }
+      .image{
+        width: 40px;
+        transition: all ease 700ms;
+      }
+    }
+  }
+}
 @media screen and (min-width: 950px) {
   .download {
     .flexed {
@@ -397,6 +446,155 @@ input[list].highlight::-webkit-calender-picker-indicator {
   }
 }
 
+// !styling of log in page
+.login-navigation{
+  border: 1px solid black;
+  padding: .5em 1em;
+  color: white;
+  background-color: rgb(22, 22, 21);
+  // font-weight: 700;
+  .driveMe{
+    font-family: "Playwrite HR", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  }
+}
+.container{
+  .content{
+    .form-container-two{
+      #signUpMessage{
+        border: 1px solid black;
+        background-color: lightgreen;
+        padding: 1em .5em;
+        text-align: center;
+        border-radius: 10px;
+        animation: moveIn ease 700ms;
+        transform: translateY(-10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        display: none;
+        
+        .image{
+          width: 20px;
+        }
+      }
+      padding: 1em;
+
+      .form-header{
+        border: 1px solid black;
+        padding: .8em;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-family: "Playwrite HR", cursive;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+  }
+      }
+      #form{
+        display: flex;
+        flex-direction:column;
+        gap: 1em;
+        #Email, #pword{
+          padding:.5em 1em;
+          // max-width: 500px;
+        }
+        .submit{
+          padding: 1em 0;
+          #submit{
+            padding: 1em 0;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .or{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .3em;
+      padding: .5em 0;
+      .line{
+        width: 40%;
+        border: 1px solid grey;
+      }
+    }
+    .account{
+      width: 95%;
+      margin: auto;
+      // display: flex;
+      // gap: .5em;
+      // flex-direction: column;
+      .google{
+        .image{
+          width: 7%;
+          max-width: 30px;
+        }
+        padding: .5em 0;
+        border-radius: 10px;
+        display: flex;
+        gap: .3em;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(203, 202, 202);
+      }
+    }
+    
+    .footer{
+      font-weight: 400;
+      text-align: center;
+      font-size: .7em;
+      padding:2em 1em;
+    }
+  }
+
+@keyframes moveIn{
+  0%{
+    transform: translateY(-30px);
+  }
+  100%{
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideIn{
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOut{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .container{
+    width:70%;
+    margin: 0 auto;
+    max-width: 400px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+}
 @media screen and (min-width: 1136px) {
   .first-part {
     display: flex;
