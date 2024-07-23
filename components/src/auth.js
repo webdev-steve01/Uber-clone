@@ -30,13 +30,24 @@ submit.addEventListener("submit", (e) => {
       user.email = email;
       user.password = password;
       console.log(user);
-      message.style.display = "flex"
-      message.style.alignItems = 'center'
-      message.style.justifyContent = 'space-around'
+      message.style.display = "flex";
+      message.style.alignItems = "center";
+      message.style.justifyContent = "space-around";
+      // message.style.display = 'none'
     })
     .catch((err) => {
       console.log(err.message);
-      message.style.display = 'block'
+      // message.innerText = err.message
+      if (err.message == "Firebase: Error (auth/invalid-email).") {
+        message.innerText = "invalid email/password";
+      } 
+      if (err.message == "Firebase: Error (auth/missing-password)..") {
+        message.innerText = "password required";
+      } 
+      message.style.display = "flex";
+      message.style.alignItems = "center";
+      message.style.justifyContent = "space-around";
+      message.style.backgroundColor = "red";
     });
 });
 
