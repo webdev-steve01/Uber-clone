@@ -5,12 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "build": "webpack",
     "make-executable": "icacls \"node_modules\\.bin\\webpack\" /grant Users:F"
-=======
-    "build": "webpack"
->>>>>>> 3f89da8275cdf2f0c3259ac21cc4d36f42cc0e19
   },
   "keywords": [],
   "author": "",
