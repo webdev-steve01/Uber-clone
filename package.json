@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "make-executable": "node -e \"require('fs').chmodSync('node_modules/.bin/webpack', '755')\""
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
