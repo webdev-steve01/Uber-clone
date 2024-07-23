@@ -4,7 +4,7 @@ const { platform } = require("process");
 const { Template } = require("webpack");
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: "./components/src/auth.js",
   output: {
     path: path.resolve(__dirname, "dist"),
