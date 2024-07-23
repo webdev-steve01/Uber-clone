@@ -4,11 +4,14 @@ const { platform } = require("process");
 const { Template } = require("webpack");
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: "./components/src/auth.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  watch: true
+  cache: {
+    type: "filesystem",
+  },
+  watch: true,
 };
