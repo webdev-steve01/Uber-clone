@@ -121,10 +121,7 @@ const login = document.getElementById('logIn')
 const options = document.getElementById('login-options')
 const body = document.getElementById('body')
 const signup = document.getElementById('signUp')
-const loginDrive = document.getElementById('login-drive')
-const loginBusiness = document.getElementById('login-Business')
-const loginRide = document.getElementById('login-ride')
-const loginDelivery = document.getElementById('login-delivery')
+
 
 
 login.addEventListener('click', () => {

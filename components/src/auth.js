@@ -18,7 +18,7 @@ const message = document.getElementById("signUpMessage");
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
-
+const text = document.getElementById('success')
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.getElementById("Email").value;
@@ -39,7 +39,7 @@ submit.addEventListener("submit", (e) => {
       console.log(err.message);
       // message.innerText = err.message
       if (err.message == "Firebase: Error (auth/invalid-email).") {
-        message.innerText = "invalid email/password";
+        text.innerText  = "invalid email/password";
       } 
       if (err.message == "Firebase: Error (auth/missing-password)..") {
         message.innerText = "password required";
@@ -56,3 +56,4 @@ const cancel = document.getElementById("cancel");
 cancel.addEventListener("click", () => {
   message.style.display = "none";
 });
+
