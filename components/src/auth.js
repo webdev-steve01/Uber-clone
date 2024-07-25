@@ -8,12 +8,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAY9k0tCYI_L4F2c87gfmJ16m_FqNqGBKU",
-  authDomain: "driveme-login.firebaseapp.com",
-  projectId: "driveme-login",
-  storageBucket: "driveme-login.appspot.com",
-  messagingSenderId: "347225371593",
-  appId: "1:347225371593:web:3f7b3e4ffd2f706ac46e18",
+  apiKey: "AIzaSyDNWqSQmH2Zsc0-4JyXZ-pz2qE3dGxKkZE",
+  authDomain: "authentication-e64d8.firebaseapp.com",
+  projectId: "authentication-e64d8",
+  storageBucket: "authentication-e64d8.appspot.com",
+  messagingSenderId: "1065149139319",
+  appId: "1:1065149139319:web:9a2f23260e1df068a6f972",
 };
 const user = {
   email: "",
@@ -51,14 +51,15 @@ ggl.addEventListener("click", () => {
 const text = document.getElementById("success");
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
-  const email = document.getElementById("Email").value;
-  const password = document.getElementById("pword").value;
-  createUserWithEmailAndPassword(auth, email, password)
+  const email = document.getElementById("Email");
+  const password = document.getElementById("pword");
+  // const pvalue = password.value
+  createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((credential) => {
       console.log("user created: ", credential.user);
       submit.reset();
-      user.email = email;
-      user.password = password;
+      user.email = email.value;
+      user.password = password.value;
       console.log(user);
       message.style.display = "flex";
       message.style.alignItems = "center";
@@ -68,7 +69,7 @@ submit.addEventListener("submit", (e) => {
         count++;
 
         if (count > 6) {
-          location.replace("./login.html");
+          window.location.href = "./login.html";
         }
       });
       // message.style.display = 'none'
@@ -96,6 +97,7 @@ cancel.addEventListener("click", () => {
 });
 const logInEmail = document.getElementById("LEmail");
 const logInPassword = document.getElementById("Lpword");
+const loginSubmit = document.getElementById("Lsubmit");
 
 const logInFunction = async () => {
   const userEmail = logInEmail.value;
@@ -105,6 +107,6 @@ const logInFunction = async () => {
     auth,
     userEmail,
     userPword
-  );
+  )
   console.log(userCredentials.user);
 };
