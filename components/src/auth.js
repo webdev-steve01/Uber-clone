@@ -69,7 +69,7 @@ submit.addEventListener("submit", (e) => {
         count++;
 
         if (count > 6) {
-          window.location.href = "login.html";
+          window.location.href = "../index.html";
         }
       });
       // message.style.display = 'none'
