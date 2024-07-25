@@ -48,6 +48,7 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
+
 const text = document.getElementById("success");
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -99,11 +100,11 @@ const logInEmail = document.getElementById("LEmail");
 const logInPassword = document.getElementById("Lpword");
 const loginSubmit = document.getElementById("Lsubmit");
 
-const logInFunction = async () => {
+const logInFunction =  () => {
   const userEmail = logInEmail.value;
   const userPword = logInPassword.value;
 
-  const userCredentials = await signInWithEmailAndPassword(
+  const userCredentials = signInWithEmailAndPassword(
     auth,
     userEmail,
     userPword
