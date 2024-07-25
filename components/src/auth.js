@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAY9k0tCYI_L4F2c87gfmJ16m_FqNqGBKU",
@@ -15,10 +21,11 @@ const user = {
 };
 const submit = document.getElementById("form");
 const message = document.getElementById("signUpMessage");
+const googleBtn = document.getElementById("google");
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
-const text = document.getElementById('success')
+const text = document.getElementById("success");
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.getElementById("Email").value;
@@ -33,17 +40,25 @@ submit.addEventListener("submit", (e) => {
       message.style.display = "flex";
       message.style.alignItems = "center";
       message.style.justifyContent = "space-around";
+      let count = 1;
+      setInterval(() => {
+        count++;
+
+        if (count > 6) {
+          location.replace("./login.html");
+        }
+      });
       // message.style.display = 'none'
     })
     .catch((err) => {
       console.log(err.message);
       // message.innerText = err.message
       if (err.message == "Firebase: Error (auth/invalid-email).") {
-        text.innerText  = "invalid email/password";
-      } 
+        text.innerText = "invalid email/password";
+      }
       if (err.message == "Firebase: Error (auth/missing-password)..") {
         message.innerText = "password required";
-      } 
+      }
       message.style.display = "flex";
       message.style.alignItems = "center";
       message.style.justifyContent = "space-around";
@@ -56,4 +71,24 @@ const cancel = document.getElementById("cancel");
 cancel.addEventListener("click", () => {
   message.style.display = "none";
 });
+const logInEmail = document.getElementById("LEmail");
+const logInPassword = document.getElementById("Lpword");
+const Lsubmit = document.getElementById("Lsubmit");
 
+const logInFunction = async () => {
+  const userEmail = logInEmail.value;
+  const userPword = logInPassword.value;
+
+  const userCredentials = await signInWithEmailAndPassword(
+    auth,
+    userEmail,
+    userPword
+  );
+  console.log(userCredentials.user);
+};
+
+Lsubmit.addEventListener("click", logInFunction);
+
+const provider = GoogleAuthProvider();
+
+const test = () => console.log("heyy");

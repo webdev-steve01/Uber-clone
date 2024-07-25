@@ -367,6 +367,48 @@ input[list].highlight::-webkit-calender-picker-indicator {
   gap: 1em;
 }
 
+#Sign-options {
+  display: none;
+  animation: slideIn 300ms ease;
+}
+#Sign-options .content {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  font-size: 1.5em;
+  padding: 0 1em;
+}
+#Sign-options .content .ride {
+  border-bottom: 1px solid black;
+  padding: 3em 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+#Sign-options .content .ride:hover .image {
+  transform: translateX(10px);
+}
+#Sign-options .content .ride .text a {
+  text-decoration: none;
+  border-bottom: none;
+}
+#Sign-options .content .ride .text a:link {
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+}
+#Sign-options .content .ride .text a:hover {
+  text-decoration: none;
+}
+#Sign-options .content .ride .image {
+  width: 40px;
+  transition: all ease 700ms;
+}
+
 #login-options {
   display: none;
   animation: slideIn 300ms ease;
@@ -444,7 +486,6 @@ input[list].highlight::-webkit-calender-picker-indicator {
   padding: 1em 0.5em;
   text-align: center;
   border-radius: 10px;
-  animation: moveIn ease 700ms;
   transform: translateY(-10px);
   display: flex;
   align-items: center;
@@ -470,13 +511,13 @@ input[list].highlight::-webkit-calender-picker-indicator {
   flex-direction: column;
   gap: 1em;
 }
-.container .content #form #Email, .container .content #form #pword {
+.container .content #form #Email, .container .content #form #pword, .container .content #form #Fname, .container .content #form #LEmail, .container .content #form #Lpword {
   padding: 0.5em 1em;
 }
 .container .content #form .submit {
   padding: 1em 0;
 }
-.container .content #form .submit #submit {
+.container .content #form .submit #submit, .container .content #form .submit #Lsubmit {
   padding: 1em 0;
   background-color: rgb(0, 0, 0);
   color: white;
@@ -506,6 +547,7 @@ input[list].highlight::-webkit-calender-picker-indicator {
   display: flex;
   gap: 0.3em;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
   background-color: rgb(203, 202, 202);
 }

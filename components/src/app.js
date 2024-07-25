@@ -119,6 +119,7 @@ cancelTwo.addEventListener("click", () => {
 
 const login = document.getElementById('logIn')
 const options = document.getElementById('login-options')
+const sign = document.getElementById('Sign-options')
 const body = document.getElementById('body')
 const signup = document.getElementById('signUp')
 
@@ -130,11 +131,12 @@ login.addEventListener('click', () => {
   } else {
     toggle = true
   }
-  options.style.display = toggle ? "block" : "none";
-  options.style.animation = toggle
+  sign.style.display = toggle ? "block" : "none";
+  sign.style.animation = toggle
     ? "slideIn 300ms ease"
     : "slideOut 300ms ease";
   body.style.display = toggle ? "none" : "block";
+  options.style.display = 'none'
 
 
 })
@@ -144,6 +146,7 @@ signup.addEventListener("click", () => {
   } else {
     toggle = true;
   }
+  sign.style.display = 'none'
   options.style.display = toggle ? "block" : "none";
   options.style.animation = toggle
   ? "slideIn 300ms ease"
