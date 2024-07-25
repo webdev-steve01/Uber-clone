@@ -19,12 +19,35 @@ const user = {
   email: "",
   password: "",
 };
+const ggl = document.getElementById("authenticate");
 const submit = document.getElementById("form");
 const message = document.getElementById("signUpMessage");
-const googleBtn = document.getElementById("google");
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
+auth.languageCode = "en";
+const provider = new GoogleAuthProvider();
+
+ggl.addEventListener("click", () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user);
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+      window.location.href = "./dashboard.html";
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      // ...
+    });
+});
 const text = document.getElementById("success");
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -73,7 +96,6 @@ cancel.addEventListener("click", () => {
 });
 const logInEmail = document.getElementById("LEmail");
 const logInPassword = document.getElementById("Lpword");
-const Lsubmit = document.getElementById("Lsubmit");
 
 const logInFunction = async () => {
   const userEmail = logInEmail.value;
@@ -86,9 +108,3 @@ const logInFunction = async () => {
   );
   console.log(userCredentials.user);
 };
-
-Lsubmit.addEventListener("click", logInFunction);
-
-const provider = GoogleAuthProvider();
-
-const test = () => console.log("heyy");
