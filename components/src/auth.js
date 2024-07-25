@@ -69,7 +69,7 @@ submit.addEventListener("submit", (e) => {
         count++;
 
         if (count > 6) {
-          window.location.href = "./login.html";
+          window.location.href = "login.html";
         }
       });
       // message.style.display = 'none'
@@ -109,4 +109,9 @@ const logInFunction = async () => {
     userPword
   )
   console.log(userCredentials.user);
+  setInterval(() => {
+    window.location.href = 'dashboard.html'
+  }, 1000)
 };
+
+loginSubmit.addEventListener('click', logInFunction)
