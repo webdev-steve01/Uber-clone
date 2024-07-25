@@ -29,8 +29,8 @@ const auth = getAuth(firebaseApp);
 auth.languageCode = "en";
 const provider = new GoogleAuthProvider();
 
-ggl.addEventListener("click",async () => {
-  await signInWithPopup(auth, provider)
+ggl.addEventListener("click",() => {
+   signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
