@@ -67,9 +67,6 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
-userGoogleEmail = users.gEmail
-userGoogleName = users.gName
-profilePic = users.gPic
 
 
 
