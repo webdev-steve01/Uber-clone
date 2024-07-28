@@ -71,15 +71,15 @@ function updateUser(person) {
 }
 
 // updateUser(person)
+updateUser(person)
 
-onAuthStateChanged(auth, (person) => {
-  if (person) {
-    updateUser(person)
-  } else {
-    alert('create account and log in')
-    window.location.href = 'signup.html'
-  }
-})
+// onAuthStateChanged(auth, (person) => {
+//   if (person) {
+//   } else {
+//     alert('create account and log in')
+//     window.location.href = 'signup.html'
+//   }
+// })
 
 
 
