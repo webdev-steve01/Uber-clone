@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -20,6 +21,11 @@ const user = {
   email: "",
   password: "",
 };
+// !fetching user details
+const userGoogleName = document.getElementById('userGoogleName')
+const userGoogleEmail = document.getElementById('userGoogleEmail')
+const profilePic = document.getElementById('profilePic');
+const text = document.getElementById("success");
 const ggl = document.getElementById("authenticate");
 const submit = document.getElementById("form");
 const message = document.getElementById("signUpMessage");
@@ -29,6 +35,9 @@ const auth = getAuth(firebaseApp);
 auth.languageCode = "en";
 const provider = new GoogleAuthProvider();
 
+
+
+// !google authentication method
 ggl.addEventListener("click", () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -41,6 +50,11 @@ ggl.addEventListener("click", () => {
       // IdP data available using getAdditionalUserInfo(result)
       // ...
       window.location.href = "dashboard.html";
+
+      userGoogleName.textContent = user.displayName;
+      userGoogleEmail.textContent = user.email;
+      profilePic.src = user.photoURL
+      
     })
     .catch((error) => {
       // Handle Errors here.
@@ -50,8 +64,16 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
+const updateUserProfile = () => {
+  
+}
 
-const text = document.getElementById("success");
+
+
+
+
+
+// !submit event
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.getElementById("Email");
@@ -93,15 +115,19 @@ submit.addEventListener("submit", (e) => {
     });
 });
 
+
+// !cancel the success message
 const cancel = document.getElementById("cancel");
 
 cancel.addEventListener("click", () => {
   message.style.display = "none";
 });
+
 const logInEmail = document.getElementById("LEmail");
 const logInPassword = document.getElementById("Lpword");
 const loginSubmit = document.getElementById("Lsubmit");
 
+// !log in function
 const logInFunction = () => {
   const userEmail = logInEmail.value;
   const userPword = logInPassword.value;
@@ -129,4 +155,5 @@ const logInFunction = () => {
     });
 };
 
+// !submit event
 loginSubmit.addEventListener("click", logInFunction);
