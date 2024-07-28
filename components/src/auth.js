@@ -70,7 +70,16 @@ function updateUser(person) {
   profilePic.src = person.photoURL;
 }
 
-updateUser(person )
+// updateUser(person)
+
+onAuthStateChanged(auth, (person) => {
+  if (person) {
+    updateUser(person)
+  } else {
+    alert('create account and log in')
+    window.location.href = 'signup.html'
+  }
+})
 
 
 
