@@ -54,9 +54,9 @@ ggl.addEventListener("click", () => {
       // ...
       window.location.href = "dashboard.html";
 
-      userGoogleEmail.innerText = user.email
-      userGoogleName.innerText  = user.displayName
-      profilePic.src = user.photoURL
+      users.gEmail = user.email
+      users.gName  = user.displayName
+      users.gPic = user.photoURL
       
     })
     .catch((error) => {
@@ -67,6 +67,9 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
+userGoogleEmail = users.gEmail
+userGoogleName = users.gName
+profilePic = users.gPic
 
 
 
