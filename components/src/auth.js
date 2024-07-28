@@ -37,9 +37,10 @@ ggl.addEventListener("click", () => {
       // The signed-in user info.
       const user = result.user;
       console.log(credential);
+      console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
-      window.location.href = "./dashboard.html";
+      // window.location.href = "dashboard.html";
     })
     .catch((error) => {
       // Handle Errors here.
