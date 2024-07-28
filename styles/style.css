@@ -533,8 +533,14 @@ input[list].highlight::-webkit-calender-picker-indicator {
   gap: 0.3em;
   padding: 0.5em 0;
 }
+.container .or .text {
+  text-align: center;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 300;
+}
 .container .or .line {
-  width: 40%;
+  width: 30%;
   border: 1px solid grey;
 }
 .container .account {

@@ -29,14 +29,14 @@ const auth = getAuth(firebaseApp);
 auth.languageCode = "en";
 const provider = new GoogleAuthProvider();
 
-ggl.addEventListener("click",() => {
-   signInWithPopup(auth, provider)
+ggl.addEventListener("click", () => {
+  signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       // The signed-in user info.
       const user = result.user;
-      console.log(user);
+      console.log(credential);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
       window.location.href = "./dashboard.html";
@@ -101,29 +101,31 @@ const logInEmail = document.getElementById("LEmail");
 const logInPassword = document.getElementById("Lpword");
 const loginSubmit = document.getElementById("Lsubmit");
 
-const logInFunction =  () => {
+const logInFunction = () => {
   const userEmail = logInEmail.value;
   const userPword = logInPassword.value;
 
-  const userCredentials = signInWithEmailAndPassword(
-    auth,
-    userEmail,
-    userPword
-  ).then(() => {
-    console.log(userCredentials.user)
-    setInterval(() => {
-      window.location.href = "dashboard.html"
-    }, 1000)
-  }).catch((err) => {
-    console.log(err);
-    if (err == 'FirebaseError: Firebase: Error (auth/invalid-email).') {
-      console.log('invalid email/password');
-    } else if (err == 'FirebaseError: Firebase: Error (auth/missing-password).') {
-      console.log('password required');
-    } else if (err == "FirebaseError: Firebase: Error (auth/invalid-credential).") {
-      console.log('Incorrect email/password');
-    }
-  })
+  const userCredentials = signInWithEmailAndPassword(auth, userEmail, userPword)
+    .then(() => {
+      console.log(userCredentials.user);
+      setInterval(() => {
+        window.location.href = "dashboard.html";
+      }, 1000);
+    })
+    .catch((err) => {
+      console.log(err);
+      if (err == "FirebaseError: Firebase: Error (auth/invalid-email).") {
+        console.log("invalid email/password");
+      } else if (
+        err == "FirebaseError: Firebase: Error (auth/missing-password)."
+      ) {
+        console.log("password required");
+      } else if (
+        err == "FirebaseError: Firebase: Error (auth/invalid-credential)."
+      ) {
+        console.log("Incorrect email/password");
+      }
+    });
 };
 
-loginSubmit.addEventListener('click', logInFunction)
+loginSubmit.addEventListener("click", logInFunction);
