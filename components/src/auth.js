@@ -40,7 +40,7 @@ ggl.addEventListener("click", () => {
       console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
-      // window.location.href = "dashboard.html";
+      window.location.href = "dashboard.html";
     })
     .catch((error) => {
       // Handle Errors here.
