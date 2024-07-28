@@ -53,10 +53,6 @@ ggl.addEventListener("click", () => {
       // IdP data available using getAdditionalUserInfo(result)
       // ...
       window.location.href = "dashboard.html";
-
-      users.gEmail = user.email
-      users.gName  = user.displayName
-      users.gPic = user.photoURL
       
     })
     .catch((error) => {
@@ -67,9 +63,14 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
-userGoogleEmail = users.gEmail
-userGoogleName = users.gName
-profilePic = users.gPic
+const person = auth.currentUser
+function updateUser(person) {
+  userGoogleEmail.innerText = person.email;
+  userGoogleName.innerText = person.displayName;
+  profilePic.src = person.photoURL;
+}
+
+updateUser(person )
 
 
 
