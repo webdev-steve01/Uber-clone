@@ -17,9 +17,12 @@ const firebaseConfig = {
   messagingSenderId: "1065149139319",
   appId: "1:1065149139319:web:9a2f23260e1df068a6f972",
 };
-const user = {
+const users = {
   email: "",
   password: "",
+  gEmail: "",
+  gName: "",
+  gPic: ""
 };
 // !fetching user details
 const userGoogleName = document.getElementById('userGoogleName')
@@ -51,9 +54,9 @@ ggl.addEventListener("click", () => {
       // ...
       window.location.href = "dashboard.html";
 
-      userGoogleName.textContent = user.displayName;
-      userGoogleEmail.textContent = user.email;
-      profilePic.src = user.photoURL
+      users.gEmail = user.email
+      users.gName = user.displayName
+      users.gPic = user.photoURL
       
     })
     .catch((error) => {
@@ -64,10 +67,9 @@ ggl.addEventListener("click", () => {
       // ...
     });
 });
-const updateUserProfile = () => {
-  
-}
-
+userGoogleEmail = users.gEmail
+userGoogleName = users.gName
+profilePic = users.gPic
 
 
 
