@@ -2,46 +2,68 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  connectAuthEmulator,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  onAuthStateChanged
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
+// import { logOut } from "./test";
 const firebaseConfig = {
-  authDomain: "uber-clone-beryl-pi.vercel.app",
-  apiKey: "AIzaSyDNWqSQmH2Zsc0-4JyXZ-pz2qE3dGxKkZE",
-  authDomain: "authentication-e64d8.firebaseapp.com",
-  projectId: "authentication-e64d8",
-  storageBucket: "authentication-e64d8.appspot.com",
-  messagingSenderId: "1065149139319",
-  appId: "1:1065149139319:web:9a2f23260e1df068a6f972",
+  apiKey: "AIzaSyDVcSY3i8JEWnQghJsWaac3P3ItAo_eikE",
+  authDomain: "new-project-c0754.firebaseapp.com",
+  projectId: "new-project-c0754",
+  storageBucket: "new-project-c0754.appspot.com",
+  messagingSenderId: "111629958118",
+  appId: "1:111629958118:web:35f70b6422a899430bf427",
 };
-const users = {
-  email: "",
-  password: "",
-  gEmail: "",
-  gName: "",
-  gPic: ""
-};
-// !fetching user details
-const userGoogleName = document.getElementById('userGoogleName')
-const userGoogleEmail = document.getElementById('userGoogleEmail')
-const profilePic = document.getElementById('profilePic');
-const text = document.getElementById("success");
-const ggl = document.getElementById("authenticate");
-const submit = document.getElementById("form");
-const message = document.getElementById("signUpMessage");
+const app = initializeApp(firebaseConfig);
 
-const firebaseApp = initializeApp(firebaseConfig);
-const auth = getAuth(firebaseApp);
-auth.languageCode = "en";
+const signUpEmail = document.getElementById('email');
+const logInEmail = document.getElementById('LEmail');
+const logInPassword = document.getElementById('Lpword');
+const logIn = document.getElementById('Lsubmit');
+const signUpPassword = document.getElementById('pword')
+const signUp = document.getElementById('submit')
+const google = document.getElementById('authenticate')
+const logOut = document.getElementById('logout')
+const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
+// connectAuthEmulator(auth, "http//:localhost:9099")
 
 
+logIn.addEventListener('click', async (e) => {
+  e.preventDefault()
+    const email = logInEmail.value;
+    const password = logInPassword.value;
 
-// !google authentication method
-ggl.addEventListener("click", () => {
+    const userCredentials = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+  console.log(userCredentials.user);
+  setInterval(() => {
+    window.location.href = "dashboard.html";
+  }, 3000);
+})
+
+signUp.addEventListener('click', async (e) => {
+  e.preventDefault()
+  const signUpMail = signUpEmail.value;
+  const signUpPword = signUpPassword.value
+
+  const newUser = await createUserWithEmailAndPassword(auth, signUpMail, signUpPword);
+  console.log(newUser.user);
+  setInterval(() => {
+    window.location.href = 'login.html'
+  }, 3000)
+})
+
+google.addEventListener('click', async (e) => {
+  e.preventDefault();
   signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -49,11 +71,11 @@ ggl.addEventListener("click", () => {
       // The signed-in user info.
       const user = result.user;
       console.log(credential);
-      console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
-      window.location.href = "dashboard.html";
-      
+      setInterval(() => {
+        window.location.href = 'dashboard.html'
+      }, 3000);
     })
     .catch((error) => {
       // Handle Errors here.
@@ -62,110 +84,33 @@ ggl.addEventListener("click", () => {
       // The email of the user's account used.
       // ...
     });
+})
+console.log('het');
+
+logOut.addEventListener('click', (e) => {
+  console.log('hdhhd');
+  
+  signOut(auth).then(() => {
+    console.log('signed out');
+    window.location.href = '../index.html'
+  }).catch(() => {
+    console.log('error');
+    
+  })
+})
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    console.log(uid);
+    
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    console.log('user signed out');
+    
+  }
 });
-const person = auth.currentUser
-function updateUser(person) {
-  userGoogleEmail.innerText = person.email;
-  userGoogleName.innerText = person.displayName;
-  profilePic.src = person.photoURL;
-}
-
-// updateUser(person)
-updateUser(person)
-
-// onAuthStateChanged(auth, (person) => {
-//   if (person) {
-//   } else {
-//     alert('create account and log in')
-//     window.location.href = 'signup.html'
-//   }
-// })
-
-
-
-
-
-// !submit event
-submit.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("Email");
-  const password = document.getElementById("pword");
-  // const pvalue = password.value
-  createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((credential) => {
-      console.log("user created: ", credential.user);
-      submit.reset();
-      user.email = email.value;
-      user.password = password.value;
-      console.log(user);
-      message.style.display = "flex";
-      message.style.alignItems = "center";
-      message.style.justifyContent = "space-around";
-      let count = 1;
-      setInterval(() => {
-        count++;
-
-        if (count > 6) {
-          window.location.href = "logIn.html";
-        }
-      });
-      // message.style.display = 'none'
-    })
-    .catch((err) => {
-      console.log(err.message);
-      // message.innerText = err.message
-      if (err.message == "Firebase: Error (auth/invalid-email).") {
-        text.innerText = "invalid email/password";
-      }
-      if (err.message == "Firebase: Error (auth/missing-password)..") {
-        message.innerText = "password required";
-      }
-      message.style.display = "flex";
-      message.style.alignItems = "center";
-      message.style.justifyContent = "space-around";
-      message.style.backgroundColor = "red";
-    });
-});
-
-
-// !cancel the success message
-const cancel = document.getElementById("cancel");
-
-cancel.addEventListener("click", () => {
-  message.style.display = "none";
-});
-
-const logInEmail = document.getElementById("LEmail");
-const logInPassword = document.getElementById("Lpword");
-const loginSubmit = document.getElementById("Lsubmit");
-
-// !log in function
-const logInFunction = () => {
-  const userEmail = logInEmail.value;
-  const userPword = logInPassword.value;
-
-  const userCredentials = signInWithEmailAndPassword(auth, userEmail, userPword)
-    .then(() => {
-      console.log(userCredentials.user);
-      setInterval(() => {
-        window.location.href = "dashboard.html";
-      }, 1000);
-    })
-    .catch((err) => {
-      console.log(err);
-      if (err == "FirebaseError: Firebase: Error (auth/invalid-email).") {
-        console.log("invalid email/password");
-      } else if (
-        err == "FirebaseError: Firebase: Error (auth/missing-password)."
-      ) {
-        console.log("password required");
-      } else if (
-        err == "FirebaseError: Firebase: Error (auth/invalid-credential)."
-      ) {
-        console.log("Incorrect email/password");
-      }
-    });
-};
-
-// !submit event
-loginSubmit.addEventListener("click", logInFunction);

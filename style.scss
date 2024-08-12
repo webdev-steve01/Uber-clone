@@ -49,6 +49,7 @@ input[list].highlight::-webkit-calender-picker-indicator {
         cursor: pointer;
         border-radius: 50px;
         transition: all ease 300ms;
+        position: relative;
       }
       .hover-highlight:hover {
         background-color: rgb(44, 44, 42);
@@ -64,35 +65,30 @@ input[list].highlight::-webkit-calender-picker-indicator {
       font-optical-sizing: auto;
       font-weight: 300;
       font-style: normal;
-      .dropdown {
-        list-style-type: none;
-        position: relative;
-        visibility: visible;
-        z-index: 10;
-        display: none;
-        left: 0;
-        .download-child{
-          background-color: red;
-        }
-      }
-    }
-    .DriveMe:hover {
-      .dropdown {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        background-color: rgb(22, 22, 21);
-        color: white;
-        margin: 1em 0;
-        .dropdown-child{
-          &:hover{
-            color: #d6d3d3;
+      position: relative;
+      .extra-info{
+          // border: 1px solid red;
+          position: absolute;
+          text-align: left;
+          // top: -10px;
+          top: 2em;
+          left: 0;
+          border-radius: 10px;
+          overflow: hidden;
+          // padding: .5em .5em .5em 0;
+          display: none;
+          .details{
+            // border: 1px solid green;
+            padding: 1em 0;
+            min-width: 100px;
+            text-align: center;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
           }
         }
       }
     }
   }
-}
 
 .first-part {
   background-color: black;
@@ -543,7 +539,7 @@ input[list].highlight::-webkit-calender-picker-indicator {
         display: flex;
         flex-direction:column;
         gap: 1em;
-        #Email, #pword, #Fname,#LEmail, #Lpword{
+        #email, #pword, #Fname,#LEmail, #Lpword{
           padding:.5em 1em;
           // max-width: 500px;
         }
@@ -638,6 +634,30 @@ input[list].highlight::-webkit-calender-picker-indicator {
   100%{
     transform: translateY(-100px);
     opacity: 0;
+  }
+}
+.enquiry{
+  to
+  .details{
+    display: flex;
+    .text{
+      border: 1px solid black;
+    }
+    .image{
+      width: 20%;
+      border: 1px solid black;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  #logOut{
+    border: 1px solid black;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
   }
 }
 @media screen and (min-width: 600px) {

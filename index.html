@@ -13,7 +13,8 @@
   <title>DriveMe</title>
   <script defer src="./anime-master/lib/anime.min.js"></script>
   <script defer src="./components/src/app.js"></script>
-  <script src="./components/src/auth.js"></script>
+  <script src="./dist/bundle.js"></script>
+  
 </head>
 <body >
   <nav class="nav-bar">
@@ -21,12 +22,12 @@
       <ul class="nav-bar--list" id="main">
         <li class="DriveMe">
           DriveMe
-          <ul class="dropdown">
-            <li class="dropdown-child">Ride</li>
-            <li class="dropdown-child">Drive</li>
-            <li class="dropdown-child">DriveMe Eats</li>
-            <li class="dropdown-child">About us</li>
-          </ul>
+          <div class="extra-info">
+            <div class="details">tools</div>
+            <div class="details">payments</div>
+            <div class="details">driver</div>
+            <div class="details" id="logOut">Log Out</div>
+          </div>
         </li>
       </ul>
     </section>
@@ -34,7 +35,10 @@
       <ul class="nav-bar--list">
         <li></li>
         <li class="hover hover-highlight" id="logIn">Log in</li>
-        <li class="hover hover-highlight" id="signUp"><span>sign up</span></li>
+        <li class="hover hover-highlight" id="signUp"><span>
+          sign up
+          
+        </span></li>
         <li class="hover" >
           <div  >
             <svg id="darkMode"  xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -52,7 +56,7 @@
     <div class="content">
       <div class="ride">
         <p class="text" id="login-drive">
-          <a href="./components/logIn.html">Log in to drive and deliver</a>
+          <a href="./parts/login.html">Log in to drive and deliver</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -60,7 +64,7 @@
       </div>
       <div class="ride">
         <p class="text" id="login-ride">
-          <a href="./components/logIn.html">Log in to ride</a>
+          <a href="./parts/login.html">Log in to ride</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -68,7 +72,7 @@
       </div>
       <div class="ride">
         <p class="text" id="login-delivery">
-          <a href="./components/logIn.html">Log in to order delivery with uber eats</a>
+          <a href="./parts/login.html">Log in to order delivery with uber eats</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -76,7 +80,7 @@
       </div>
       <div class="ride">
         <p class="text" id="login-business">
-          <a href="./components/logIn.html">Log in to your uber for business</a>
+          <a href="./parts/login.html">Log in to your uber for business</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -88,15 +92,15 @@
     <div class="content">
       <div class="ride">
         <p class="text" id="login-drive">
-          <a href="./components/signup.html">Sign in to drive and deliver</a>
+          <a href="./parts/signup.html">Sign in to drive and deliver</a>
         </p>
         <div class="image">
-          <img src="./components/signup.html" alt="">
+          <img src="arrow-sm-right-svgrepo-com.svg" alt="">
         </div>
       </div>
       <div class="ride">
         <p class="text" id="login-ride">
-          <a href="./components/signup.html">Sign in to ride</a>
+          <a href="./parts/signup.html">Sign in to ride</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -104,7 +108,7 @@
       </div>
       <div class="ride">
         <p class="text" id="login-delivery">
-          <a href="./components/signup.html">Sign in to order delivery with uber eats</a>
+          <a href="./parts/signup.html">Sign in to order delivery with uber eats</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -112,7 +116,7 @@
       </div>
       <div class="ride">
         <p class="text" id="login-business">
-          <a href="./components/signup.html">Sign in to your uber for business</a>
+          <a href="./parts/signup.html">Sign in to your uber for business</a>
         </p>
         <div class="image">
           <img src="arrow-sm-right-svgrepo-com.svg" alt="">
@@ -348,5 +352,95 @@
       </article>
     </section>
   </div>
+   <section class="container" style="display: none;">
+      <section class="content">
+        <section class="form-container-two">
+          <div id="signUpMessage"><p id="success"></p>
+          <div class="image">
+            <img id="cancel" src="cancel-svgrepo-com (1).svg" alt="">
+          </div></div>
+          <form action="" id="form">
+            <section class="form-header">Welcome Back</section>
+            <input
+              type="email"
+              placeholder="Enter email"
+              id="LEmail"
+            />
+            <input
+              type="password"
+              placeholder="Enter password"
+              id="Lpword"
+            />
+            <div class="submit"><button type="submit" id="Lsubmit">Continue</button></div>
+          </form>
+        </section>
+        <section class="or">
+          <div class="line"></div>
+          <p class="text">Book and chill</p>
+          <div class="line"></div>
+        </section>
+        <section class="account">
+          <section class="google"id="authenticate">
+            <section class="image">
+              <img src="google-icon-svgrepo-com.svg" alt="" />
+            </section>
+            <p class="text" >continue with google</p>
+          </section>
+        </section>
+        <footer class="footer">
+          By proceeding, you consent to get calls, Whatsapp or SMS messages,
+          Including by automated means, from DriveMe and it's affiliates to the
+          number provided.
+        </footer>
+      </section>
+    </section>
+
+    <!-- ! Ignore this part, this was added to ensure the bundle.js file works fine -->
+    <section class="container" style="display: none;">
+      
+      <section class="content">
+        <section class="form-container-two">
+          <div id="signUpMessage"><p id="success"></p>
+          <div class="image">
+            <img id="cancel" src="../cancel-svgrepo-com (1).svg" alt="">
+          </div></div>
+          <form action="" id="form">
+            <section class="form-header">Welcome Back</section>
+            <input
+              type="email"
+              placeholder="Enter email"
+              id="LEmail"
+            />
+            <input
+              type="password"
+              placeholder="Enter password"
+              id="Lpword"
+            />
+            <div class="submit"><button type="submit" id="Lsubmit">Continue</button></div>
+          </form>
+        </section>
+        <section class="or">
+          <div class="line"></div>
+          <p class="text">Book and chill</p>
+          <div class="line"></div>
+        </section>
+        <section class="account">
+          <section class="google"id="authenticate">
+            <section class="image">
+              <img src="google-icon-svgrepo-com.svg" alt="" />
+            </section>
+            <p class="text" >continue with google</p>
+          </section>
+        </section>
+        <footer class="footer">
+          By proceeding, you consent to get calls, Whatsapp or SMS messages,
+          Including by automated means, from DriveMe and it's affiliates to the
+          number provided.
+        </footer>
+      </section>
+      <div class="submit"><button type="submit" id="Lsubmit">Continue</button></div>
+      <div class="submit"><button type="submit" id="submit">Continue</button></div>
+    </section>
+  <script src="./dist/bundle.js"></script>
 </body>
 </html>

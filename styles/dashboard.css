@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.container .main .map {
+  width: 100vw;
+  height: 600px;
+  max-width: 800px;
+}
+.container .main .navigation {
+  position: absolute;
+  width: 100%;
+}
+.container .main .navigation .flexed {
+  display: flex;
+  font-size: 1.5em;
+  justify-content: space-between;
+}
+.container .main .navigation .flexed .driveMe {
+  background-color: white;
+}
+.container .main .navigation .flexed .inner-navs {
+  display: none;
+}
+.container .main .navigation .flexed .hamburger {
+  background-color: white;
+}
+.container .main .navigation .flexed .hamburger .image {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.container .main .navigation .innerBody {
+  background-color: rgb(236, 236, 236);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  margin-left: auto;
+  display: none;
+}
+.container .main .navigation .innerBody .x {
+  display: flex;
+  justify-content: right;
+  padding: 1em;
+}
+.container .main .navigation .innerBody .profile {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.container .main .navigation .innerBody .profile .text {
+  font-size: 1.5em;
+}
+.container .main .navigation .innerBody .profile .image {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.container .main .navigation .innerBody .extra-tools {
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+}
+.container .main .navigation .innerBody .extra-tools .element {
+  padding: 1em;
+  background-color: rgb(230, 229, 229);
+}
+.container .main .navigation .innerBody .extra-features .extra {
+  padding: 1em;
+}
+.container .main .content {
+  padding: 1em 2em;
+}
+.container .main .content .header {
+  font-size: 2em;
+}
+.container .main .content .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.container .main .content .input {
+  padding: 0.5em 0.5em;
+  border-radius: 50px;
+  overflow: hidden;
+  display: flex;
+  gap: 0.5em;
+  background-color: rgb(230, 229, 229);
+}
+.container .main .content .input .image {
+  width: 20px;
+}
+.container .main .content .input input {
+  width: 100%;
+  border: none;
+  background-color: rgb(230, 229, 229);
+}
+.container .main .content .input input:focus {
+  outline: none;
+}
+.container .main .content .flexed {
+  display: flex;
+  gap: 1em;
+}
+.container .main .content .flexed .PNFM {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(237, 237, 237);
+  padding: 0 1em;
+  border-radius: 50px;
+  gap: 0.5em;
+}
+.container .main .content .flexed .PNFM .image {
+  width: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .container .main .navigation {
+    position: static;
+    padding: 0.5em 1em;
+  }
+  .container .main .navigation .flexed {
+    align-items: center;
+  }
+  .container .main .navigation .flexed .inner-navs {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+  .container .main .navigation .flexed .inner-navs #profile {
+    position: relative;
+  }
+  .container .main .navigation .flexed .inner-navs #profile .image {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    overflow: hidden;
+  }
+  .container .main .navigation .flexed .inner-navs .extra-features-width {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 55px;
+    right: 55px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 30px 0 30px 30px;
+    display: none;
+  }
+  .container .main .navigation .flexed .inner-navs .extra-features-width .extra {
+    padding: 0.5em 1em;
+  }
+  .container .main .navigation .flexed .inner-navs .extra-features-width .shower {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 55px;
+    right: 55px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 30px 0 30px 30px;
+  }
+  .container .main .navigation .flexed .inner-navs .extra-features-width .shower .extra {
+    padding: 0.5em 1em;
+  }
+  .container .main .navigation .flexed .hamburger {
+    display: none;
+  }
+  .container .outer-content {
+    padding: 1em;
+    display: flex;
+    border: 1px solid black;
+    min-height: 90vh;
+    align-items: center;
+  }
+  .container .outer-content .content {
+    width: 100%;
+    max-width: 700px;
+  }
+  .container .outer-content .content .header {
+    padding: 1em 0;
+  }
+  .container .outer-content .content .form {
+    gap: 2em;
+  }
+  .container .outer-content .map {
+    max-width: 700px;
+    max-height: 500px;
+    min-width: 300px;
+    min-height: 300px;
+    width: 40%;
+  }
+}/*# sourceMappingURL=dashboard.css.map */
