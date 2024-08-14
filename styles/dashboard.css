@@ -15,6 +15,7 @@ img {
   width: 100vw;
   height: 600px;
   max-width: 800px;
+  border: none;
 }
 .container .main .navigation {
   position: absolute;
@@ -113,17 +114,53 @@ img {
   display: flex;
   gap: 1em;
 }
-.container .main .content .flexed .PNFM {
+.container .main .content .flexed .round-button {
+  position: relative;
+  background-color: rgb(237, 237, 237);
+  border-radius: 25px;
+  max-height: 50px;
+  overflow: hidden;
+}
+.container .main .content .flexed .round-button .flexed {
+  padding: 0 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(237, 237, 237);
-  padding: 0 1em;
-  border-radius: 50px;
   gap: 0.5em;
 }
-.container .main .content .flexed .PNFM .image {
+.container .main .content .flexed .round-button .flexed .image {
   width: 20px;
+}
+.container .main .content .flexed .round-button .forAnother {
+  padding: 0.5em 0.2em;
+  transition: all 900ms ease;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+}
+.container .main .content .flexed .test {
+  position: relative;
+  background-color: rgb(237, 237, 237);
+  border-radius: 25px;
+  max-height: 100px;
+}
+.container .main .content .flexed .test .flexed {
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+.container .main .content .flexed .test .flexed .image {
+  width: 20px;
+}
+.container .main .content .flexed .test .forAnother {
+  padding: 0.5em 0.2em;
+  display: block;
+  transition: all 900ms ease;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
 }
 
 @media screen and (min-width: 800px) {
@@ -162,6 +199,10 @@ img {
   }
   .container .main .navigation .flexed .inner-navs .extra-features-width .extra {
     padding: 0.5em 1em;
+    cursor: pointer;
+  }
+  .container .main .navigation .flexed .inner-navs .extra-features-width .extra:hover {
+    background-color: rgb(56, 55, 55);
   }
   .container .main .navigation .flexed .inner-navs .extra-features-width .shower {
     position: absolute;
@@ -174,30 +215,27 @@ img {
     color: white;
     border-radius: 30px 0 30px 30px;
   }
-  .container .main .navigation .flexed .inner-navs .extra-features-width .shower .extra {
-    padding: 0.5em 1em;
-  }
-  .container .main .navigation .flexed .hamburger {
+  .container .main .navigation .hamburger {
     display: none;
   }
-  .container .outer-content {
+  .outer-content {
     padding: 1em;
     display: flex;
     border: 1px solid black;
     min-height: 90vh;
     align-items: center;
   }
-  .container .outer-content .content {
+  .outer-content .content {
     width: 100%;
     max-width: 700px;
   }
-  .container .outer-content .content .header {
+  .outer-content .content .header {
     padding: 1em 0;
   }
-  .container .outer-content .content .form {
+  .outer-content .content .form {
     gap: 2em;
   }
-  .container .outer-content .map {
+  .outer-content .map {
     max-width: 700px;
     max-height: 500px;
     min-width: 300px;
