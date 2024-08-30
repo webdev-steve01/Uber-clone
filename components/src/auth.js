@@ -46,7 +46,7 @@ logIn.addEventListener('click', async (e) => {
     );
   console.log(userCredentials.user);
   setInterval(() => {
-    window.location.href = "dashboard.html";
+    window.location.href = "./parts/dashboard.html";
   }, 3000);
 })
 
@@ -59,7 +59,7 @@ signUp.addEventListener('click', async (e) => {
   const newUser = await createUserWithEmailAndPassword(auth, signUpMail, signUpPword);
   console.log(newUser.user);
   setInterval(() => {
-    window.location.href = 'login.html'
+    window.location.href = '../login.html'
   }, 3000)
 })
 
