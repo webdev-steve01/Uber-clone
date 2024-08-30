@@ -46,7 +46,7 @@ logIn.addEventListener('click', async (e) => {
     );
   console.log(userCredentials.user);
   setInterval(() => {
-    window.location.href = "./parts/dashboard.html";
+    window.location.href = "parts/dashboard.html";
   }, 3000);
 })
 
