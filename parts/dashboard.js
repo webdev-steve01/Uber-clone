@@ -4,7 +4,7 @@
 const profile = document.querySelector("#profile");
 const extraFeatures = document.getElementById("try");
 const forME = document.getElementById('forMe')
-const forAnother = document.querySelectorAll('.forAnother')
+const forAnother = document.getElementById('forAnother')
 const switcher = document.getElementById("textWitch");
 const changeClass = document.querySelectorAll('.round-button');
 const currentText = document.querySelectorAll('.currentText')
@@ -13,13 +13,12 @@ const innerBody = document.querySelectorAll('innerBody')
 const toggle = true;
 
 profile.addEventListener("click", () => {
-  extraFeatures.style.display ='block'
-  // alert("yo");
-  if (toggle) {
-    toggle = false;
-  } else {
-    toggle = true
-  }
+  extraFeatures.style.display = 'block'
+  // const disappear = () => {
+  //   extraFeatures.style.display = 'none'
+  //   profile.removeEventListener('click', disappear)
+  // }
+  // profile.addEventListener('click', disappear)
 });
 
 document.addEventListener('click', () => {
@@ -45,7 +44,7 @@ changeClass.forEach((s) => {
     s.classList.toggle("test")
   })
 })
-switcher.addEventListener('click', dropDown)
+switcher.addEventListener('click', replaceText)
 
 forAnother.forEach((s) => {
   s.addEventListener('click', () => {
@@ -56,5 +55,9 @@ ham.addEventListener('click', () => {
   innerBody.forEach((s) => {
     s.classList.toggle('innerBodyShown')
   })
+})
+
+forME.forEach(s => {
+  s.addEventListener('click', replaceText)
 })
 

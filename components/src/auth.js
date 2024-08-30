@@ -52,6 +52,7 @@ logIn.addEventListener('click', async (e) => {
 
 signUp.addEventListener('click', async (e) => {
   e.preventDefault()
+  // signUp.style.cursor = 'loader'
   const signUpMail = signUpEmail.value;
   const signUpPword = signUpPassword.value
 
